@@ -1,0 +1,11 @@
+server:
+  port: 8761 #Porta em que ira rodar o microservice
+
+spring:
+  application:
+    name: ead-service-registry
+
+eureka: #configurações eureka server
+  client:
+    registerWithEureka: false #Define para esse microservice não se registrar no eureka como cliente
+    fetch-registry: false #Não buscar registro eureka
