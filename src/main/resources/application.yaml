@@ -1,18 +1,5 @@
-server:
-  port: 8761 #Porta em que ira rodar o microservice
-
 spring:
+  profiles:
+    active: dev
   application:
     name: ead-service-registry
-
-ead:
-  serviceRegistry: #usuário e senha padrão de autenticação do service registry. Os outros microservices só irão conseguir se registrar nesse eureka server, caso enviem esse usuário e senha.
-    username: serviceregistry
-    password: 'ead123sr'
-
-eureka: #configurações eureka server
-  client:
-    registerWithEureka: false #Define para esse microservice não se registrar no eureka como cliente
-    fetch-registry: false #Não buscar registro eureka
-    service-url:   #Configuração para não exibir alertas de erros nos logs
-      defaultZone: 'http://${ead.serviceRegistry.username}:${ead.serviceRegistry.password}@localhost:8761/eureka'
